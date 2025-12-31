@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhận xét HANOI-EDU - By Đỗ Nam - THCS Duyên Thái</title>
+  <meta name="description" content="Extension Chrome tự động điền nhận xét học sinh trên truong.hanoi.edu.vn">
+  <link rel="icon" type="image/png" href="icon128.png">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+    .author {
+      text-align: center;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #444;
+      margin: 25px 0 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eee;
+    }
+    ul {
+      padding-left: 25px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 8px;
+      color: #555;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .feature-card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .feature-card .icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .feature-card h3 {
+      color: #333;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      color: #666;
+      font-size: 14px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      margin: 10px 5px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+    .btn.secondary {
+      background: linear-gradient(135deg, #11998e, #38ef7d);
+    }
+    .cta {
+      text-align: center;
+      margin: 30px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background: #f8f9fa;
+      color: #333;
+    }
+    .score-excellent { color: #11998e; font-weight: 600; }
+    .score-good { color: #667eea; font-weight: 600; }
+    .score-fair { color: #f5576c; font-weight: 600; }
+    .score-average { color: #fa709a; font-weight: 600; }
+    .score-weak { color: #ee5a5a; font-weight: 600; }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      color: #888;
+    }
+    footer a {
+      color: #667eea;
+      text-decoration: none;
+    }
+    .screenshot {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Nhận xét HANOI-EDU</h1>
+    <p class="author">By Đỗ Nam - THCS Duyên Thái, Thường Tín, Hà Nội</p>
+    
+    <div style="text-align: center;">
+      <span class="badge">Extension Chrome miễn phí</span>
+    </div>
+    
+    <p style="text-align: center; color: #555; font-size: 18px; margin-bottom: 20px;">
+      Tự động điền nhận xét học sinh trên hệ thống <strong>truong.hanoi.edu.vn</strong><br>
+      dựa theo điểm trung bình môn học
+    </p>
+    
+    <div class="cta">
+      <a href="#install" class="btn">📥 Tải về Extension</a>
+      <a href="privacy-policy.html" class="btn secondary">🔒 Chính sách bảo mật</a>
+    </div>
+
+    <h2>✨ Tính năng chính</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🔍</div>
+        <h3>Tự động phát hiện</h3>
+        <p>Nhận diện bảng điểm HANOI-EDU tự động</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📊</div>
+        <h3>5 mức đánh giá</h3>
+        <p>Xuất sắc, Giỏi, Khá, TB, Yếu</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📅</div>
+        <h3>Đa kỳ học</h3>
+        <p>Hỗ trợ HK1, HK2 và Cả năm</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎲</div>
+        <h3>Nhận xét ngẫu nhiên</h3>
+        <p>Đa dạng hóa nhận xét</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">✏️</div>
+        <h3>Tùy chỉnh</h3>
+        <p>Chỉnh sửa nhận xét theo ý</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">💾</div>
+        <h3>Lưu cài đặt</h3>
+        <p>Sử dụng lại lần sau</p>
+      </div>
+    </div>
+
+    <h2>📊 Phân loại điểm</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Điểm</th>
+          <th>Xếp loại</th>
+          <th>Nhận xét mẫu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="score-excellent">9 - 10</td>
+          <td>Xuất sắc</td>
+          <td>Tiến bộ vượt bậc, tích cực, chăm chỉ. Phát huy nhé!</td>
+        </tr>
+        <tr>
+          <td class="score-good">8 - 8.9</td>
+          <td>Giỏi</td>
+          <td>Tiến bộ tốt, tự giác học tập. Tự tin hơn nhé!</td>
+        </tr>
+        <tr>
+          <td class="score-fair">6.5 - 7.9</td>
+          <td>Khá</td>
+          <td>Có tiến bộ, cần tập trung và chủ động hơn.</td>
+        </tr>
+        <tr>
+          <td class="score-average">5 - 6.4</td>
+          <td>Trung bình</td>
+          <td>Tiến bộ chậm, cần nỗ lực và tập trung hơn.</td>
+        </tr>
+        <tr>
+          <td class="score-weak">&lt; 5</td>
+          <td>Yếu</td>
+          <td>Còn yếu, cần cố gắng nhiều, tập trung học tập.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="install">📥 Cài đặt</h2>
+    <h3>Cách 1: Chrome Web Store (Khuyên dùng)</h3>
+    <p>Đang chờ xét duyệt...</p>
+    
+    <h3>Cách 2: Cài đặt thủ công</h3>
+    <ol>
+      <li>Tải file ZIP từ <a href="https://github.com/donam26/nhan-xet-hanoi-edu/releases">GitHub Releases</a></li>
+      <li>Giải nén file ZIP</li>
+      <li>Mở Chrome, vào <code>chrome://extensions/</code></li>
+      <li>Bật <strong>Chế độ nhà phát triển</strong> (Developer mode)</li>
+      <li>Nhấn <strong>Tải tiện ích đã giải nén</strong> (Load unpacked)</li>
+      <li>Chọn thư mục đã giải nén</li>
+    </ol>
+
+    <h2>🚀 Hướng dẫn sử dụng</h2>
+    <ol>
+      <li>Truy cập trang nhập điểm trên <strong>truong.hanoi.edu.vn</strong></li>
+      <li>Nhấn vào icon extension trên thanh công cụ</li>
+      <li>Chọn <strong>Loại điểm</strong> và <strong>Ô nhận xét</strong></li>
+      <li>Nhấn <strong>"✨ Điền nhận xét tự động"</strong></li>
+    </ol>
+
+    <h2>🔒 Bảo mật</h2>
+    <ul>
+      <li>❌ KHÔNG thu thập dữ liệu cá nhân</li>
+      <li>❌ KHÔNG gửi thông tin ra bên ngoài</li>
+      <li>✅ Tất cả dữ liệu lưu trữ cục bộ trên máy</li>
+    </ul>
+    <p><a href="privacy-policy.html">Xem chính sách bảo mật đầy đủ →</a></p>
+
+    <footer>
+      <p>
+        <strong>Đỗ Nam</strong> - Giáo viên THCS Duyên Thái, Thường Tín, Hà Nội<br>
+        <a href="privacy-policy.html">Chính sách bảo mật</a> | 
+        <a href="https://github.com/donam26/nhan-xet-hanoi-edu">GitHub</a>
+      </p>
+      <p style="margin-top: 10px; font-size: 12px;">
+        © 2024 - Miễn phí sử dụng và chia sẻ
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

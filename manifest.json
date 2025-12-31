@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Nhận xét HANOI-EDU - By Đỗ Nam - THCS Duyên Thái",
+  "version": "2.1",
+  "description": "Tự động điền nhận xét học sinh theo điểm trung bình trên truong.hanoi.edu.vn. Hỗ trợ HK1, HK2 và cả năm.",
+  "author": "Đỗ Nam - THCS Duyên Thái",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["*://truong.hanoi.edu.vn/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Nhận xét HANOI-EDU",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://truong.hanoi.edu.vn/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

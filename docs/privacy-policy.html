@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chính sách Bảo mật - Nhận xét HANOI-EDU</title>
+  <meta name="description" content="Chính sách bảo mật của Extension Nhận xét HANOI-EDU">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+    .update-date {
+      text-align: center;
+      color: #888;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #444;
+      margin: 25px 0 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eee;
+      font-size: 18px;
+    }
+    p {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    ul {
+      padding-left: 25px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 10px;
+      color: #555;
+      line-height: 1.6;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #eee;
+    }
+    th {
+      background: #f8f9fa;
+      color: #333;
+      font-weight: 600;
+    }
+    .highlight {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+      margin: 15px 0;
+    }
+    .highlight strong {
+      color: #333;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #667eea;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      color: #888;
+    }
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Quay lại trang chủ</a>
+    
+    <h1>🔒 Chính sách Bảo mật</h1>
+    <p class="update-date"><strong>Ngày cập nhật:</strong> 31/12/2024</p>
+
+    <h2>Giới thiệu</h2>
+    <p>
+      Extension <strong>"Nhận xét HANOI-EDU - By Đỗ Nam - THCS Duyên Thái"</strong> cam kết 
+      bảo vệ quyền riêng tư của người dùng. Chính sách này giải thích cách extension xử lý dữ liệu.
+    </p>
+
+    <h2>Thu thập dữ liệu</h2>
+    <div class="highlight">
+      <strong>Extension này KHÔNG thu thập bất kỳ dữ liệu cá nhân nào.</strong>
+    </div>
+    
+    <p>Cụ thể:</p>
+    <ul>
+      <li>❌ Không thu thập thông tin cá nhân</li>
+      <li>❌ Không thu thập thông tin học sinh</li>
+      <li>❌ Không thu thập điểm số hoặc nhận xét</li>
+      <li>❌ Không theo dõi hành vi người dùng</li>
+      <li>❌ Không sử dụng cookies theo dõi</li>
+      <li>❌ Không gửi dữ liệu ra máy chủ bên ngoài</li>
+    </ul>
+
+    <h2>Lưu trữ dữ liệu</h2>
+    <p>Extension chỉ lưu trữ <strong>cài đặt nhận xét tùy chỉnh</strong> của bạn:</p>
+    <ul>
+      <li>✅ Dữ liệu được lưu trữ <strong>cục bộ</strong> trên máy tính của bạn</li>
+      <li>✅ Sử dụng Chrome Storage API (<code>chrome.storage.local</code>)</li>
+      <li>✅ Dữ liệu <strong>không được đồng bộ</strong> với bất kỳ máy chủ nào</li>
+      <li>✅ Bạn có thể xóa dữ liệu này bất cứ lúc nào bằng cách gỡ cài đặt extension</li>
+    </ul>
+
+    <h2>Quyền truy cập</h2>
+    <p>Extension yêu cầu các quyền sau:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Quyền</th>
+          <th>Mục đích</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>activeTab</code></td>
+          <td>Truy cập tab đang mở để đọc điểm và điền nhận xét</td>
+        </tr>
+        <tr>
+          <td><code>storage</code></td>
+          <td>Lưu cài đặt nhận xét tùy chỉnh của bạn</td>
+        </tr>
+        <tr>
+          <td><code>scripting</code></td>
+          <td>Chạy script để điền nhận xét vào trang</td>
+        </tr>
+        <tr>
+          <td><code>host_permissions</code></td>
+          <td>Chỉ hoạt động trên trang truong.hanoi.edu.vn</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Phạm vi hoạt động</h2>
+    <p>
+      Extension <strong>chỉ hoạt động</strong> trên domain <code>truong.hanoi.edu.vn</code> 
+      và không can thiệp vào bất kỳ trang web nào khác.
+    </p>
+
+    <h2>Bảo mật</h2>
+    <ul>
+      <li>Extension không có backend server</li>
+      <li>Không có kết nối mạng ra bên ngoài</li>
+      <li>Tất cả xử lý diễn ra trên máy tính của bạn</li>
+    </ul>
+
+    <h2>Thay đổi chính sách</h2>
+    <p>
+      Nếu có thay đổi về chính sách bảo mật, chúng tôi sẽ cập nhật ngày 
+      "Ngày cập nhật" ở đầu trang này.
+    </p>
+
+    <h2>Liên hệ</h2>
+    <p>Nếu có câu hỏi về chính sách bảo mật, vui lòng liên hệ:</p>
+    <div class="highlight">
+      <strong>Đỗ Nam</strong><br>
+      Giáo viên THCS Duyên Thái<br>
+      Thường Tín, Hà Nội
+    </div>
+
+    <footer>
+      <p>
+        <a href="index.html">Trang chủ</a> | 
+        Chính sách bảo mật
+      </p>
+      <p style="margin-top: 10px; font-size: 12px;">
+        Chính sách này tuân thủ yêu cầu của Chrome Web Store.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhận xét HANOI-EDU</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Nhận xét HANOI-EDU</h1>
+    <p class="author">By Đỗ Nam - THCS Duyên Thái</p>
+    
+    <!-- Chọn kỳ học -->
+    <div class="section">
+      <h2>📅 Chọn kỳ điển nhận xét</h2>
+      <div class="type-selection">
+        <div class="setting-row">
+          <label>Loại điểm:</label>
+          <select id="scoreType">
+            <option value="hk1" selected>ĐTBmhk1 (Học kỳ 1)</option>
+            <option value="hk2">ĐTBmhk2 (Học kỳ 2)</option>
+            <option value="cn">ĐTBmcn (Cả năm)</option>
+          </select>
+        </div>
+        <div class="setting-row">
+          <label>Ô nhận xét:</label>
+          <select id="commentType">
+            <option value="hk1" selected>Nội dung HK1</option>
+            <option value="hk2">Nội dung HK2</option>
+            <option value="cn">Nội dung cả năm</option>
+          </select>
+        </div>
+        <p class="status-info" id="availableInfo"></p>
+      </div>
+      <button id="detectBtn" class="btn detect">
+        🔍 Phát hiện cột có sẵn
+      </button>
+    </div>
+    
+    <div class="section">
+      <h2>Mức điểm & Nhận xét</h2>
+      
+      <div class="level">
+        <label>
+          <span class="badge excellent">9-10 điểm (Xuất sắc)</span>
+        </label>
+        <textarea id="excellent" placeholder="Tiến bộ vượt bậc, tích cực, chăm chỉ. Phát huy nhé!"></textarea>
+      </div>
+      
+      <div class="level">
+        <label>
+          <span class="badge good">8-8.9 điểm (Giỏi)</span>
+        </label>
+        <textarea id="good" placeholder="Tiến bộ tốt, tự giác học tập. Tự tin hơn nhé!"></textarea>
+      </div>
+      
+      <div class="level">
+        <label>
+          <span class="badge fair">6.5-7.9 điểm (Khá)</span>
+        </label>
+        <textarea id="fair" placeholder="Có tiến bộ, cần tập trung và chủ động hơn."></textarea>
+      </div>
+      
+      <div class="level">
+        <label>
+          <span class="badge average">5-6.4 điểm (TB)</span>
+        </label>
+        <textarea id="average" placeholder="Tiến bộ chậm, cần nỗ lực và tập trung hơn."></textarea>
+      </div>
+      
+      <div class="level">
+        <label>
+          <span class="badge weak">Dưới 5 điểm (Yếu)</span>
+        </label>
+        <textarea id="weak" placeholder="Còn yếu, cần cố gắng nhiều, tập trung học tập."></textarea>
+      </div>
+    </div>
+    
+    <p class="note">💡 Để trống sẽ dùng nhận xét mặc định (ngẫu nhiên)</p>
+    
+    <div class="actions">
+      <button id="fillBtn" class="btn primary">
+        ✨ Điền nhận xét tự động
+      </button>
+      <button id="saveBtn" class="btn secondary">
+        💾 Lưu cài đặt
+      </button>
+      <button id="resetBtn" class="btn outline">
+        🔄 Đặt lại mặc định
+      </button>
+    </div>
+    
+    <div id="status" class="status hidden"></div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

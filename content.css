@@ -1,0 +1,10 @@
+/* Highlight ô đã được điền tự động */
+.auto-filled-comment {
+  background-color: #e8f5e9 !important;
+  border-color: #4caf50 !important;
+  transition: background-color 0.3s ease;
+}
+
+.auto-filled-comment:focus {
+  background-color: #fff !important;
+}
