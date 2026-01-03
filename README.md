@@ -15,7 +15,7 @@ Extension Chrome tự động điền nhận xét học sinh trên hệ thống 
 ## 📦 Cài đặt
 
 ### Cách 1: Từ Chrome Web Store (Khuyên dùng)
-1. Truy cập [Chrome Web Store](#)
+1. Truy cập [Chrome Web Store](https://chromewebstore.google.com/detail/ilfapdphiiagljgfjbdnnebbfgmmlnpl)
 2. Nhấn "Thêm vào Chrome"
 
 ### Cách 2: Cài đặt thủ công
