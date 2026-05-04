@@ -74,13 +74,18 @@ function getComment(score, customComments, commentType) {
   else if (score >= 5) category = 'average';
   else category = 'weak';
 
-  // Cuối năm: ưu tiên bộ nhận xét ngắn (<45 ký tự) khi không có tuỳ chỉnh
-  const fallback = commentType === 'cn'
-    ? CN_DEFAULT_COMMENTS[category]
-    : DEFAULT_COMMENTS[category];
+  // Cuối năm: hệ thống giới hạn 45 ký tự cho mỗi nhận xét
+  const isCN = commentType === 'cn';
+  const fallback = isCN ? CN_DEFAULT_COMMENTS[category] : DEFAULT_COMMENTS[category];
 
-  // Lấy danh sách nhận xét
+  // Lấy danh sách nhận xét; với cn, lọc bỏ các câu dài hơn 45 ký tự
   let commentList = (customComments && customComments[category]) || fallback;
+  if (isCN) {
+    const filtered = Array.isArray(commentList)
+      ? commentList.filter(c => typeof c === 'string' && c.length <= 45)
+      : (typeof commentList === 'string' && commentList.length <= 45 ? [commentList] : []);
+    commentList = filtered.length > 0 ? filtered : CN_DEFAULT_COMMENTS[category];
+  }
   
   // Nếu là array, chọn ngẫu nhiên 1 cái
   if (Array.isArray(commentList)) {
