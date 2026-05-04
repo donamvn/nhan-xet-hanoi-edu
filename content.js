@@ -15,6 +15,40 @@ const DEFAULT_COMMENTS = {
   weak: 'Cần cố gắng nhiều hơn nữa!'
 };
 
+// Nhận xét cuối năm (dưới 45 ký tự)
+const CN_DEFAULT_COMMENTS = {
+  excellent: [
+    'Xuất sắc, chăm chỉ. Phát huy nhé!',
+    'Học tốt, năng động. Tuyệt vời!',
+    'Tiến bộ rõ, chăm học. Cố lên!',
+    'Chủ động học tập, hoàn thành tốt!'
+  ],
+  good: [
+    'Tiến bộ tốt, tự giác học tập.',
+    'Học tích cực, có cố gắng.',
+    'Chăm chỉ, mạnh dạn phát biểu.',
+    'Học tốt, cần phát huy thêm.'
+  ],
+  fair: [
+    'Có tiến bộ, cần chủ động hơn.',
+    'Cần cố gắng và tích cực hơn.',
+    'Cần tập trung, hoàn thành bài.',
+    'Chú ý nghe giảng, làm bài đủ.'
+  ],
+  average: [
+    'Tiến bộ chậm, cần nỗ lực hơn.',
+    'Cần chăm chỉ, làm bài đầy đủ.',
+    'Chú ý nghe giảng, làm bài tập.',
+    'Cần tập trung học, làm bài hơn.'
+  ],
+  weak: [
+    'Còn yếu, cần cố gắng nhiều hơn.',
+    'Hạn chế, cần nỗ lực chăm chỉ.',
+    'Chưa đạt, cần học và làm bài.',
+    'Cần tích cực, chăm làm bài tập.'
+  ]
+};
+
 // Cấu hình dựa trên cấu trúc HTML thực tế của HANOI-EDU
 const HANOI_EDU_CONFIG = {
   // Điểm trung bình - tìm theo id chứa chuỗi
@@ -32,16 +66,21 @@ const HANOI_EDU_CONFIG = {
 };
 
 // Lấy nhận xét dựa trên điểm
-function getComment(score, customComments) {
+function getComment(score, customComments, commentType) {
   let category;
   if (score >= 9) category = 'excellent';
   else if (score >= 8) category = 'good';
   else if (score >= 6.5) category = 'fair';
   else if (score >= 5) category = 'average';
   else category = 'weak';
-  
+
+  // Cuối năm: ưu tiên bộ nhận xét ngắn (<45 ký tự) khi không có tuỳ chỉnh
+  const fallback = commentType === 'cn'
+    ? CN_DEFAULT_COMMENTS[category]
+    : DEFAULT_COMMENTS[category];
+
   // Lấy danh sách nhận xét
-  let commentList = (customComments && customComments[category]) || DEFAULT_COMMENTS[category];
+  let commentList = (customComments && customComments[category]) || fallback;
   
   // Nếu là array, chọn ngẫu nhiên 1 cái
   if (Array.isArray(commentList)) {
@@ -197,7 +236,7 @@ function fillCommentsByType(scoreType, commentType, customComments) {
       }
       
       // Điền nhận xét
-      const comment = getComment(score, customComments);
+      const comment = getComment(score, customComments, commentType);
       textarea.value = comment;
       
       // Trigger events để trang nhận biết thay đổi
