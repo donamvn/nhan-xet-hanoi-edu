@@ -15,39 +15,77 @@ const DEFAULT_COMMENTS = {
   weak: 'Cần cố gắng nhiều hơn nữa!'
 };
 
-// Nhận xét cuối năm (dưới 45 ký tự)
+// Nhận xét cuối năm (tối đa 45 ký tự)
 const CN_DEFAULT_COMMENTS = {
   excellent: [
     'Xuất sắc, chăm chỉ. Phát huy nhé!',
     'Học tốt, năng động. Tuyệt vời!',
     'Tiến bộ rõ, chăm học. Cố lên!',
-    'Chủ động học tập, hoàn thành tốt!'
+    'Chủ động học tập, hoàn thành tốt!',
+    'Rất giỏi, sáng tạo. Phát huy nhé!',
+    'Học xuất sắc, tích cực phát biểu.',
+    'Nắm vững kiến thức, học rất tốt.',
+    'Thông minh, chăm chỉ. Xuất sắc!',
+    'Học giỏi đều các môn. Tuyệt vời!',
+    'Tự giác, sáng tạo. Đáng khen em!'
   ],
   good: [
     'Tiến bộ tốt, tự giác học tập.',
     'Học tích cực, có cố gắng.',
     'Chăm chỉ, mạnh dạn phát biểu.',
-    'Học tốt, cần phát huy thêm.'
+    'Học tốt, cần phát huy thêm.',
+    'Có cố gắng, kết quả khá tốt.',
+    'Học khá, cần chủ động hơn nữa.',
+    'Nắm bài tốt, cần phát biểu nhiều.',
+    'Tiến bộ rõ, tiếp tục cố gắng.',
+    'Học đều, có ý thức tốt. Khen em!',
+    'Tự giác học, kết quả khả quan.'
   ],
   fair: [
     'Có tiến bộ, cần chủ động hơn.',
     'Cần cố gắng và tích cực hơn.',
     'Cần tập trung, hoàn thành bài.',
-    'Chú ý nghe giảng, làm bài đủ.'
+    'Chú ý nghe giảng, làm bài đủ.',
+    'Học khá, cần chăm chỉ thêm.',
+    'Cần phát biểu, làm bài đầy đủ.',
+    'Có cố gắng, cần ổn định hơn.',
+    'Cần chủ động học và làm bài.',
+    'Học được, cần cố gắng đều hơn.',
+    'Cần mạnh dạn và tự tin hơn nhé.'
   ],
   average: [
     'Tiến bộ chậm, cần nỗ lực hơn.',
     'Cần chăm chỉ, làm bài đầy đủ.',
     'Chú ý nghe giảng, làm bài tập.',
-    'Cần tập trung học, làm bài hơn.'
+    'Cần tập trung học, làm bài hơn.',
+    'Cần cố gắng, học chăm chỉ hơn.',
+    'Học chưa đều, cần ổn định lại.',
+    'Cần ôn bài và làm bài tập đủ.',
+    'Cố gắng học, đừng nản chí nhé.',
+    'Cần chú ý hơn trong giờ học.',
+    'Học còn chậm, cần kiên trì hơn.'
   ],
   weak: [
     'Còn yếu, cần cố gắng nhiều hơn.',
     'Hạn chế, cần nỗ lực chăm chỉ.',
     'Chưa đạt, cần học và làm bài.',
-    'Cần tích cực, chăm làm bài tập.'
+    'Cần tích cực, chăm làm bài tập.',
+    'Cần ôn lại kiến thức cơ bản.',
+    'Hãy chăm chỉ, cố gắng từng ngày.',
+    'Cần tập trung và học nghiêm túc.',
+    'Cố lên em, cần học chăm chỉ hơn.',
+    'Chưa tốt, cần nỗ lực thật nhiều.',
+    'Cần kiên trì học, đừng bỏ cuộc.'
   ]
 };
+
+// Viết hoa chữ cái đầu của câu nhận xét cho đẹp
+function capitalizeFirst(str) {
+  if (!str || typeof str !== 'string') return str;
+  const trimmed = str.trimStart();
+  if (!trimmed) return str;
+  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
+}
 
 // Cấu hình dựa trên cấu trúc HTML thực tế của HANOI-EDU
 const HANOI_EDU_CONFIG = {
@@ -88,12 +126,11 @@ function getComment(score, customComments, commentType) {
   }
   
   // Nếu là array, chọn ngẫu nhiên 1 cái
-  if (Array.isArray(commentList)) {
-    return commentList[Math.floor(Math.random() * commentList.length)];
-  }
-  
-  // Nếu là string, trả về luôn
-  return commentList;
+  const picked = Array.isArray(commentList)
+    ? commentList[Math.floor(Math.random() * commentList.length)]
+    : commentList;
+
+  return capitalizeFirst(picked);
 }
 
 // Phát hiện các loại cột có sẵn trong bảng
